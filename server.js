@@ -2,6 +2,12 @@ const express = require('express');
 const consolidate = require('consolidate');
 const static = require('express-static');
 const mysql = require('mysql');
+const common=require('./libs/common');
+
+
+
+
+
 var server = express();
 server.listen(8081);
 
@@ -50,8 +56,27 @@ server.get('/', (req, res,next) => {
     });
 });
 server.get('/article',(req,res)=>{
-    console.log(req)
-    res.render('context.ejs',{});
+    console.log(req.query);
+    if(req.query.id) {
+        db.query(`SELECT * FROM article_table WHERE id=${req.query.id}`, (err, data) => {
+            if (err) {
+                res.status(404).send('数据有误，请稍后再试!').end();
+            } else {
+                if (data.length == 0) {
+                    res.status(500).send('你请求的数据不存在').end();
+                } else {
+                    // console.log(common.time2Date(data[0].post_time));
+                    var articleData=data[0];
+                    articleData.sData=common.time2Date(articleData.post_time);
+                    //文章内容调整
+                    articleData.content=articleData.content.replace(/^/gm,'<p>').replace(/$/gm,'</p>');
+                    res.render('conText.ejs', {article_data: articleData});
+                }
+            }
+        });
+    }else{
+        res.status(404).send('你请求的文章不存在').end();
+    }
 });
 
 server.get('/',(req,res)=>{
