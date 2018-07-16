@@ -59,6 +59,5 @@ server.get('/',(req,res)=>{
 });
 
 
-
 //接收静态文件
 server.use(static('./www'));
