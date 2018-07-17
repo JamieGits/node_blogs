@@ -30,8 +30,12 @@ server.use(cookieParser());
     }));
 })();
 //模版引擎
-server.set('view engine','html');
-server.set('views','template');
-server.engine('html',consolidate.ejs);
+server.set('view engine', 'html');
+server.set('views', 'template');
+server.engine('html', consolidate.ejs);
+
+//router
+server.use('/article', require('./route/router1')());
+server.use('/blog',require('./route/router2')());
 //静态文件
 server.use(static('./static/'));

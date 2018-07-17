@@ -2,7 +2,6 @@ function toDou(num) {
     return num < 10 ? '0' + num : '' + num;
 }
 
-
 module.exports = {
     time2Date: function (timestamp) {
         var oDate = new Date();
