@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="febb0202-de15-4c59-ba27-db46f7a4123a" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/route/router1.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/route/router2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/2.ejs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/route/admin.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/route/web.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/admin/login.ejs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/libs/common.js" beforeDir="false" afterPath="$PROJECT_DIR$/libs/common.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server1.js" beforeDir="false" afterPath="$PROJECT_DIR$/server1.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -30,17 +29,44 @@
       <file leaf-file-name="server1.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server1.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="227">
-              <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
+            <state relative-caret-position="245">
+              <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2.ejs" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/template/2.ejs">
+      <file leaf-file-name="web.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/route/web.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="144">
-              <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+              <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/route/admin.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="126">
+              <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="login.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/admin/login.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="144">
+              <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2.ejs" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/template/2.ejs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="11" lean-forward="true" selection-end-line="11" />
             </state>
           </provider>
         </entry>
@@ -81,15 +107,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="conText.ejs" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template/conText.ejs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1764">
-              <caret line="98" selection-start-line="98" selection-end-line="98" />
-            </state>
-          </provider>
-        </entry>
-      </file>
     </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
@@ -117,11 +134,14 @@
         <option value="$PROJECT_DIR$/server.js" />
         <option value="$PROJECT_DIR$/template/conText.ejs" />
         <option value="$PROJECT_DIR$/libs/common.js" />
-        <option value="$PROJECT_DIR$/server1.js" />
         <option value="$PROJECT_DIR$/route/router2.js" />
         <option value="$PROJECT_DIR$/template/2.ejs.js" />
         <option value="$PROJECT_DIR$/route/router1.js" />
         <option value="$PROJECT_DIR$/template/2.ejs" />
+        <option value="$PROJECT_DIR$/server1.js" />
+        <option value="$PROJECT_DIR$/route/web.js" />
+        <option value="$PROJECT_DIR$/template/admin/login.ejs" />
+        <option value="$PROJECT_DIR$/route/admin.js" />
       </list>
     </option>
   </component>
@@ -309,6 +329,12 @@
               <item name="node_blogs" type="462c0819:PsiDirectoryNode" />
               <item name="template" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="node_blogs" type="b2602c69:ProjectViewProjectNode" />
+              <item name="node_blogs" type="462c0819:PsiDirectoryNode" />
+              <item name="template" type="462c0819:PsiDirectoryNode" />
+              <item name="admin" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -425,7 +451,7 @@
       <workItem from="1531706581698" duration="3690000" />
       <workItem from="1531712393614" duration="2598000" />
       <workItem from="1531723294054" duration="10828000" />
-      <workItem from="1531795164385" duration="3879000" />
+      <workItem from="1531795164385" duration="5799000" />
     </task>
     <task id="LOCAL-00001" summary="node first blog">
       <created>1531398426217</created>
@@ -469,11 +495,18 @@
       <option name="project" value="LOCAL" />
       <updated>1531735914438</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="test router">
+      <created>1531813684423</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1531813684424</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32666000" />
+    <option name="totallyTimeSpent" value="34586000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -486,6 +519,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="bottom" id="TODO" order="10" weight="0.32838285" />
@@ -559,7 +593,8 @@
     </ignored-roots>
     <MESSAGE value="node first blog" />
     <MESSAGE value="learn" />
-    <option name="LAST_COMMIT_MESSAGE" value="learn" />
+    <MESSAGE value="test router" />
+    <option name="LAST_COMMIT_MESSAGE" value="test router" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -709,13 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="227">
-          <caret line="38" column="7" selection-start-line="38" selection-start-column="7" selection-end-line="38" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/route/router1.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
@@ -725,8 +753,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/template/2.ejs">
       <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="11" lean-forward="true" selection-end-line="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/web.js">
+      <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="144">
-          <caret line="8" column="22" selection-start-line="8" selection-start-column="22" selection-end-line="8" selection-end-column="22" />
+          <caret line="8" column="2" lean-forward="true" selection-start-line="8" selection-start-column="2" selection-end-line="8" selection-end-column="2" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template/admin/login.ejs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="144">
+          <caret line="8" column="44" selection-start-line="8" selection-start-column="44" selection-end-line="8" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/server1.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="245">
+          <caret line="43" lean-forward="true" selection-start-line="43" selection-end-line="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/route/admin.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="5" lean-forward="true" selection-start-line="7" selection-start-column="5" selection-end-line="7" selection-end-column="5" />
         </state>
       </provider>
     </entry>

@@ -35,7 +35,20 @@ server.set('views', 'template');
 server.engine('html', consolidate.ejs);
 
 //router
-server.use('/article', require('./route/router1')());
-server.use('/blog',require('./route/router2')());
+/*server.use('/article', require('./route/router1')());
+server.use('/blog',require('./route/router2')());*/
+
+server.use('/',require('./route/web')());
+server.use('/admin',require('./route/admin')());
+
+
+
+
+
+
+
+
+
+
 //静态文件
 server.use(static('./static/'));
