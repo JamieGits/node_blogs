@@ -14,6 +14,7 @@ var server = express();
 server.listen(8080);
 //获取请求数据
 //get自带
+server.use(bodyParser.urlencoded());
 server.use(multerObj.any());
 //cookie
 server.use(cookieParser());
