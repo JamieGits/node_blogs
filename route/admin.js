@@ -29,7 +29,8 @@ module.exports = function () {
     router.post('/login', (req, res) => {
         // console.log(req.body);
         var username = req.body.username;
-        var password = common.md5(req.body.password + common.MD5_SUFFIX);
+        var password=req.body.password;
+        var password = common.md5(password + common.MD5_SUFFIX);
         db.query(`SELECT * FROM admin_table WHERE username='${username}'`, (err, data) => {
             if (err) {
                 console.error(err);
@@ -39,8 +40,10 @@ module.exports = function () {
                     res.status(400).send('no this admin').end();
                 } else {
                     if (data[0].password == password) {
+                        //成功
                         req.session['admin_id'] = data[0].ID;
-                        res.redirect('/admin/');
+                        console.log('到这了')
+                        res.redirect('/admin');
                     } else {
                         res.status(400).send('this password is wrong').end();
                     }
@@ -48,9 +51,9 @@ module.exports = function () {
             }
         });
     });
-    router.get('/', (req, res) => {
-        console.log(req.url)
-        res.send('你已经成功登录').end();
+    router.post('/', (req, res) => {
+        // res.render('admin/index.ejs', {});
+        res.send('lalal').end();
     });
 
     return router;
