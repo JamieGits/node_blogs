@@ -58,11 +58,11 @@ module.exports = function () {
             case 'mod':
                 break;
             case 'del':
-                db.query(`delete from banner_table where id=${req.query.id}`,(err,data)=>{
-                    if(err){
+                db.query(`delete from banner_table where id=${req.query.id}`, (err, data) => {
+                    if (err) {
                         console.error(err);
                         res.status(400).send('del error').end();
-                    }else{
+                    } else {
                         res.redirect('?');
                     }
                 });
@@ -76,7 +76,8 @@ module.exports = function () {
                         res.render('admin/banners.ejs', {banners: data});
                     }
                 });
-        };
+        }
+        ;
 
     });
 
