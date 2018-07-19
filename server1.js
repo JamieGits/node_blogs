@@ -22,7 +22,7 @@ server.use(cookieParser());
 (function () {
     var keys = [];
     for (var i = 0; i < 1000; i++) {
-        keys[i] = Math.random();
+        keys[i] = 'a_'+Math.random();
     }
     server.use(cookieSession({
         name: 'sess_id',

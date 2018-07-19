@@ -8,7 +8,7 @@ module.exports = function () {
     var db = mysql.createPool({
         host: 'localhost',
         user: 'root',
-        port:3308,
+        port: 3308,
         password: '123456',
         database: 'learn'
     });
@@ -24,11 +24,9 @@ module.exports = function () {
 
 
     router.get('/login', (req, res) => {
-        // res.send('我是admin');
         res.render('admin/login.ejs', {});
     });
     router.post('/login', (req, res) => {
-        // console.log(req.body);
         var username = req.body.username;
         var password = req.body.password;
         var password = common.md5(password + common.MD5_SUFFIX);
@@ -42,8 +40,8 @@ module.exports = function () {
                 } else {
                     if (data[0].password == password) {
                         //成功
-                        req.session['admin_id'] = data[0].ID;
-                        res.redirect('/admin/');
+                        req.session['admin_id'] = data[0].id;
+                        res.redirect('/admin');
                     } else {
                         res.status(400).send('this password is wrong').end();
                     }
@@ -51,14 +49,56 @@ module.exports = function () {
             }
         });
     });
-    router.get('/admin', (req, res) => {
+    router.get('/', (req, res) => {
         res.render('admin/index.ejs', {});
     });
 
     router.get('/banners', (req, res) => {
-        // res.render('/admin/banners.ejs', {});
-        res.send('我是banners');
+        switch (req.query.act) {
+            case 'mod':
+                break;
+            case 'del':
+                db.query(`delete from banner_table where id=${req.query.id}`,(err,data)=>{
+                    if(err){
+                        console.error(err);
+                        res.status(400).send('del error').end();
+                    }else{
+                        res.redirect('?');
+                    }
+                });
+                break;
+            default:
+                db.query('select *from banner_table', (err, data) => {
+                    if (err) {
+                        console.error(err);
+                        res.status(400).send('database error').end();
+                    } else {
+                        res.render('admin/banners.ejs', {banners: data});
+                    }
+                });
+        };
+
     });
 
+    router.post('/admin/banners', (req, res) => {
+        console.log(req.body)
+        var title = req.body.title;
+        var description = req.body.description;
+        var href = req.body.href;
+        if (!title || !description || !href) {
+            res.status(400).send('arg error').end();
+        } else {
+            db.query(`insert into banner_table(title,description,href)value('${title}',
+            '${description}','${href}')`, (err, data) => {
+                if (err) {
+                    console.error(err);
+                    res.status(500).send('database error').end();
+                } else {
+                    res.redirect('/admin//banners');
+                }
+            });
+        }
+        ;
+    });
     return router;
 };
