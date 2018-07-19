@@ -8,7 +8,8 @@ module.exports = function () {
     var db = mysql.createPool({
         host: 'localhost',
         user: 'root',
-        password: '2783gjg',
+        port:3308,
+        password: '123456',
         database: 'learn'
     });
 
@@ -29,7 +30,7 @@ module.exports = function () {
     router.post('/login', (req, res) => {
         // console.log(req.body);
         var username = req.body.username;
-        var password=req.body.password;
+        var password = req.body.password;
         var password = common.md5(password + common.MD5_SUFFIX);
         db.query(`SELECT * FROM admin_table WHERE username='${username}'`, (err, data) => {
             if (err) {
@@ -42,8 +43,7 @@ module.exports = function () {
                     if (data[0].password == password) {
                         //成功
                         req.session['admin_id'] = data[0].ID;
-                        console.log('到这了')
-                        res.redirect('/admin');
+                        res.redirect('/admin/');
                     } else {
                         res.status(400).send('this password is wrong').end();
                     }
@@ -51,9 +51,13 @@ module.exports = function () {
             }
         });
     });
-    router.post('/', (req, res) => {
-        // res.render('admin/index.ejs', {});
-        res.send('lalal').end();
+    router.get('/admin', (req, res) => {
+        res.render('admin/index.ejs', {});
+    });
+
+    router.get('/banners', (req, res) => {
+        // res.render('/admin/banners.ejs', {});
+        res.send('我是banners');
     });
 
     return router;
